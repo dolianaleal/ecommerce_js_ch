@@ -1,0 +1,13 @@
+.imagenBindex {
+            background-color: #4649FF;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+}
+
+.imagenLogo {
+            height: 200px;
+            width: 200px;
+}
