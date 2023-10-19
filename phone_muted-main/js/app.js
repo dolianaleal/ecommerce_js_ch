@@ -1,4 +1,4 @@
-let gorras = 0;
+/*let gorras = 0;
 let carrito = 0;
 
 // Esta funcion pregunta si desea guardar gorras, y los va sumando, en las variables antes declaradas, usando un ciclo.
@@ -35,6 +35,9 @@ function sumaDeCompra() {
     }
 }
 
+
+
+
 // Aca llamo a la funcion consultadecompra y le paso por parametros la consulta
 
 consultadecompra("1. Deseas agregar la gorra byPoms rosada?")
@@ -45,9 +48,85 @@ consultadecompra("5. Deseas agregar la gorra Puma amarilla?")
 
 
 sumaDeCompra()
-
+*/
 
 // Cree una funcion para consultar productos
+
+
+
+
+function consultarProductos(productos) {
+
+    let mensajeOpciones = "";
+
+    for (let index = 0 ; index < productos.length ; index ++) {
+        const producto = productos[index];
+
+        mensajeOpciones = mensajeOpciones + " El producto " + producto.nombre + "tiene un valor de " + producto.precio + "pesos argentinos" ;
+    }
+
+    alert(mensajeOpciones);
+}
+
+// cree una funcion para comprar productos
+
+function comprarProductos (productos){
+ const productosSeleccionados = [];
+ let mensajeProductosSeleccionados = "";
+
+ for (let index = 0; index < productos.length; index++) {
+    const producto = productos[index];
+
+ 
+    const seleccionProducto = prompt(`"Si quieres la gorra " ${producto.nombre} que tiene un valor de ${producto.precio} marque Si, de lo contrario marque No`).toLowerCase();
+
+    if (seleccionProducto === "si") {
+        productosSeleccionados.push(producto);
+    }
+}
+
+let sumaProductos = 0;
+
+    for (let index = 0; index < productosSeleccionados.length; index++) {
+        const productoSeleccionado = productosSeleccionados[index];
+
+        mensajeProductosSeleccionados = mensajeProductosSeleccionados + "Elegiste el producto " + productoSeleccionado.nombre + " con un valor de " + productoSeleccionado.precio + " \n";
+
+        sumaProductos = sumaProductos + productoSeleccionado.precio
+    }
+
+
+
+
+    alert(mensajeProductosSeleccionados + " y su total a pagar es de " + sumaProductos);
+
+
+}
+
+
+//cree una funcion para buscar productos por separado
+
+function buscarProducto(productos) {
+    let nombreDeProducto = prompt(" Ingrese el producto que necesita").toLowerCase();
+
+    const productoSeleccionado = productos.find(producto => {
+        if (nombreDeProducto === producto.nombre) {
+            return true
+        }
+
+    });
+
+    if (!productoSeleccionado) {
+        alert(" este producto no fue encontrado");
+    }
+    else {
+        alert(" Ud selecciono " + productoSeleccionado.nombre + " y ese producto tiene un valor de " + productoSeleccionado.precio)
+    }
+
+}
+
+
+// Mi array de productos que utilice en las funciones anteriores
 
 
 const productos = [
@@ -58,96 +137,21 @@ const productos = [
     { id: 5, nombre: "gorra gris puma", precio: 850 },
 ];
 
-function consultarProductos(productos)
 
-function consultarServicios(servicios) {
 
-    let mensajeOpciones = "";
+// En este promt estoy consultandole al usuario que necesita y en base a eso llamar a las funciones antes creadas, segun la necesidad
 
-    for (let index = 0; index < servicios.length; index++) {
-        const servicio = servicios[index];
+const seleccionDeOpcion = prompt("Seleccione A para consultar productos y precios, seleccione B para comprar un producto o seleccion C si quieres buscar una gorra en particular ").toUpperCase();
 
-        mensajeOpciones = mensajeOpciones + "El servicio de " + servicio.nombre + " tiene un valor de " + servicio.precio + " pesos argentinos ,";
-    }
 
-    alert(mensajeOpciones);
+if (seleccionDeOpcion === "A"){
+    consultarProductos(productos);
 }
 
-function contratarServicios(servicios) {
-
-    const serviciosSeleccionados = [];
-    let mensajeProductosSeleccionados = "";
-
-    for (let index = 0; index < servicios.length; index++) {
-        const servicio = servicios[index];
-
-        const seleccionServicio = prompt(`"Si desea aquirir el servicio de " ${servicio.nombre} que tiene un valor de ${servicio.precio} marque Si, de lo contrario marque No`).toLowerCase();
-
-        if (seleccionServicio === "si") {
-            serviciosSeleccionados.push(servicio);
-        }
-    }
-    let sumaServicios = 0;
-
-    for (let index = 0; index < serviciosSeleccionados.length; index++) {
-        const servicioSeleccionado = serviciosSeleccionados[index];
-
-        mensajeProductosSeleccionados = mensajeProductosSeleccionados + "Usted selecciono el servicio de " + servicioSeleccionado.nombre + " con un valor de " + servicioSeleccionado.precio + " \n";
-
-        sumaServicios = sumaServicios + servicioSeleccionado.precio
-    }
-
-
-
-
-    alert(mensajeProductosSeleccionados + " y su total a pagar es de " + sumaServicios);
+if (seleccionDeOpcion === "B"){
+    comprarProductos(productos);
 }
 
-
-function buscarServicio(servicios) {
-    let nombreDeServicio = prompt(" Ingrese el servicio que necesita").toLowerCase();
-
-    const servicioSeleccionado = servicios.find(servicio => {
-        if (nombreDeServicio === servicio.nombre) {
-            return true
-        }
-
-    });
-
-    if (!servicioSeleccionado) {
-        alert(" este servicio no fue encontrado");
-    }
-    else {
-        alert(" Ud selecciono " + servicioSeleccionado.nombre + " y ese servicio tiene un valor de " + servicioSeleccionado.precio)
-    }
-
-}
-
-const servicios = [
-    { id: 1, nombre: "consulta psicologica", precio: 1500 },
-    { id: 2, nombre: "consulta psiquiatrica", precio: 1800 },
-    { id: 3, nombre: "seminario psicoeducativo", precio: 1200 },
-    { id: 4, nombre: "grupo de apoyo", precio: 700 },
-    { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
-];
-
-
-
-const seleccionDeOpcion = prompt("Seleccione A para consultar servicios y precios , o seleccione B para contratar un servicio o seleccione C si quieres buscar la existencia de un servicio").toUpperCase();
-
-
-
-if (seleccionDeOpcion === "A") {
-    consultarServicios(servicios);
-}
-
-
-if (seleccionDeOpcion === "B") {
-    contratarServicios(servicios);
-}
-
-
-if (seleccionDeOpcion === "C") {
-    buscarServicio(servicios);
-
+if (seleccionDeOpcion === "C"){
+    buscarProducto(productos);
 }
