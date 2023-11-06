@@ -1,0 +1,23 @@
+[
+    
+        {"id": 1, 
+        "nombre": "gorra rosada by poms", 
+        "precio": 1500 },
+
+        { "id": 2, 
+        "nombre": "gorra adiddas", 
+        "precio": 1800 },
+
+        { "id": 3, 
+        "nombre": "gorra verde by poms", 
+        "precio": 1200 },
+
+        { "id": 4, 
+        "nombre": "gorra negra nike", 
+        "precio": 700 },
+
+        { "id": 5, 
+        "nombre": "gorra gris puma", 
+        "precio": 850 }
+    
+]
