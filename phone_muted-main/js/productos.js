@@ -1,3 +1,5 @@
+
+
 const renderPagina = (productos) =>{
 
     let carrito = [];
@@ -136,8 +138,7 @@ if(!vencimiento){
     return
 }
 
-
-
+Swal.fire( nombreCompleto + " " +'gracias por adquirir los productos. Su compra fue procesada')
 
 
 
