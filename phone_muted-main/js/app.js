@@ -48,7 +48,7 @@ consultadecompra("5. Deseas agregar la gorra Puma amarilla?")
 
 
 sumaDeCompra()
-*/
+
 
 // Cree una funcion para consultar productos
 
@@ -154,4 +154,5 @@ if (seleccionDeOpcion === "B"){
 
 if (seleccionDeOpcion === "C"){
     buscarProducto(productos);
-}
+}  */
+

@@ -1,5 +1,4 @@
 
-
 const renderPagina = (productos) =>{
 
     let carrito = [];
