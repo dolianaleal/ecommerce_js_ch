@@ -14,7 +14,7 @@ botonRegistro.addEventListener("click", (event) => {
 
     localStorage.setItem("registro", JSON.stringify(formularioUsuario));
 
-    !email ? Swal.fire("Hola, debes ingresar una direccion de correo para continuar") :  Swal.fire("Hola " + nombreUsuario + ", bienvenide a tu tienda favorita")
+    !email ? Swal.fire("Hola, debes ingresar una direccion de correo para continuar") :  Swal.fire("Hola " + nombreUsuario + ", bienvenid@ a tu tienda favorita")
     .then(() => {
         window.location = "./index.html";
     });
