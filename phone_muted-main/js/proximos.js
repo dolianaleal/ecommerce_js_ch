@@ -1,3 +1,10 @@
+
+let registroStorage = JSON.parse(localStorage.getItem("registro"));
+
+if (!registroStorage || !registroStorage.email) {
+    window.location = "./registro.html"
+}
+
 const apiUrl = 'https://rickandmortyapi.com/api/character/';
 
 const container = document.getElementById('container');
