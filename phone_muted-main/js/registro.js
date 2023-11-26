@@ -16,7 +16,7 @@ botonRegistro.addEventListener("click", (event) => {
 
     !email ? Swal.fire("Hola, debes ingresar una direccion de correo para continuar") :  Swal.fire("Hola " + nombreUsuario + ", bienvenid@ a tu tienda favorita")
     .then(() => {
-        window.location = "./index.html";
+        window.location = "../index.html";
     });
     
 });

@@ -1,10 +1,4 @@
 
-let registroStorage = JSON.parse(localStorage.getItem("registro"));
-
-if (!registroStorage || !registroStorage.email) {
-    window.location = "./registro.js"
-}
-
 const renderPagina = (productos) =>{
 
     let carrito = [];
@@ -22,6 +16,7 @@ const renderPagina = (productos) =>{
 
         seleccionProductos.append(div);
     }
+
 
 
 productos.forEach(item => {
